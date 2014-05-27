@@ -1,0 +1,36 @@
+<project>
+
+
+    <!-- Using ant build.xml to spawn and kill process, since spawning
+       a process with gradle is not so straightforward.
+       Also, the production servers are AWS EC2 micro-instances, and are
+       severely resource constrained.  Using ant for this
+        avoids having to install and run gradle on prod servers
+    -->
+
+    <property name="jar.name" value="dropwizard-gradle-groovy-fat.jar" />
+
+
+	<target name="runSpawned" >
+        <exec executable="java" osfamily="unix" spawn="true" >
+            <env key="JAVA_OPTS" value="${javaOpts}"/>
+            <arg value="-jar"/>
+            <arg value="${jar.name}"/>
+            <arg value="server"/>
+            <arg value="properties/card-service-2.yml"/>
+
+        </exec>
+	</target>
+
+	<target name="stopServer">
+        <exec executable="pkill" osfamily="unix" spawn="false" >
+            <arg value="-f"/>
+            <arg value="${jar.name}"/>
+        </exec>
+
+        <!-- Hack sleep.  Should instead put in explicit check that server stopped -->
+        <sleep seconds="3"/>
+
+    </target>
+
+</project>
