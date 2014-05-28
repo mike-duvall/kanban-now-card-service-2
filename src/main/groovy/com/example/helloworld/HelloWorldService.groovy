@@ -60,7 +60,7 @@ public class HelloWorldService extends Service<HelloWorldConfiguration> {
         final Template template = configuration.buildTemplate()
 
         environment.addHealthCheck(new TemplateHealthCheck(template))
-        environment.addHealthCheck(new GetCardsForBoardHealthCheck())
+        environment.addHealthCheck(new GetCardsForBoardHealthCheck(configuration))
         environment.addResource(new HelloWorldResource(template))
         environment.addResource(new ProtectedResource())
         environment.addResource(new PeopleResource(dao))
