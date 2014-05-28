@@ -13,7 +13,6 @@ public class GetCardsForBoardHealthCheck extends HealthCheck {
 
     @Override
     protected Result check() throws Exception {
-//        return Result.healthy()
-        return Result.unhealthy("Returning unhealthy result to turn healthcheck monitor red to prove healthcheck is being run")
+        return Result.healthy()
     }
 }
