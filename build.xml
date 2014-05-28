@@ -8,7 +8,7 @@
         avoids having to install and run gradle on prod servers
     -->
 
-    <property name="jar.name" value="dropwizard-gradle-groovy-fat.jar" />
+    <property name="jar.name" value="kanban-now-card-service-2-fat.jar" />
 
 
 	<target name="runSpawned" >
