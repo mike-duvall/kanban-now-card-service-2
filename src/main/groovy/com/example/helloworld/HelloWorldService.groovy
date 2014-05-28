@@ -6,6 +6,7 @@ import com.example.helloworld.core.Person
 import com.example.helloworld.core.Template
 import com.example.helloworld.core.User
 import com.example.helloworld.db.PersonDAO
+import com.example.helloworld.health.GetCardsForBoardHealthCheck
 import com.example.helloworld.health.TemplateHealthCheck
 import com.example.helloworld.resources.HelloWorldResource
 import com.example.helloworld.resources.PeopleResource
@@ -59,6 +60,7 @@ public class HelloWorldService extends Service<HelloWorldConfiguration> {
         final Template template = configuration.buildTemplate()
 
         environment.addHealthCheck(new TemplateHealthCheck(template))
+        environment.addHealthCheck(new GetCardsForBoardHealthCheck())
         environment.addResource(new HelloWorldResource(template))
         environment.addResource(new ProtectedResource())
         environment.addResource(new PeopleResource(dao))
