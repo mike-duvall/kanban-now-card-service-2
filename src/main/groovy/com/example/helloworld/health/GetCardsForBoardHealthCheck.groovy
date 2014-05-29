@@ -1,10 +1,7 @@
 package com.example.helloworld.health
 
 import com.example.helloworld.HelloWorldConfiguration
-import com.example.helloworld.core.Template
-import com.google.common.base.Optional
 import com.yammer.metrics.core.HealthCheck
-import com.yammer.metrics.core.HealthCheck.Result
 import groovyx.net.http.HttpResponseException
 import junit.framework.AssertionFailedError
 
@@ -14,6 +11,8 @@ import static org.unitils.reflectionassert.ReflectionAssert.assertReflectionEqua
 import groovyx.net.http.RESTClient
 
 import static org.junit.Assert.assertThat
+
+import com.yammer.metrics.core.HealthCheck.Result
 
 
 public class GetCardsForBoardHealthCheck extends HealthCheck {
@@ -33,14 +32,12 @@ public class GetCardsForBoardHealthCheck extends HealthCheck {
         def restClient = new RESTClient( url )
 
 //        String path = 'card/?boardId=61&location=1'
-        String path = 'hello-world'
+        String path = 'card'
 
         restClient.headers = [Accept: 'application/json']
 
-//        def response = restClient.get( path : path )
 
-
-        def response = doRestCall {
+        def response = makeRESTCall {
             restClient.get( path : path, requestContentType : 'application/json' )
         }
 
@@ -55,15 +52,17 @@ public class GetCardsForBoardHealthCheck extends HealthCheck {
 //                ]
 
         def expectedResponse = [
-                    id: 1,
-                    content: 'Hello, Stranger!'
+            [
+                    id: 5939,
+                    text: 'order vitamins'
+            ]
         ]
 
-        assertThat response.status, equalTo(200)
         try {
+            assertThat response.status, equalTo(200)
             assertReflectionEquals(expectedResponse, response.responseData)
         }
-        catch (AssertionFailedError assertionFailedError) {
+        catch (Throwable assertionFailedError) {
             return Result.unhealthy(assertionFailedError.getMessage())
         }
 
@@ -86,7 +85,7 @@ public class GetCardsForBoardHealthCheck extends HealthCheck {
 
     }
 
-    static def doRestCall(def closure) {
+    static def makeRESTCall(def closure) {
         try {
             return closure()
         } catch (HttpResponseException hrex) {

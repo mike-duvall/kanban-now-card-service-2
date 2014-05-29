@@ -2,7 +2,7 @@
 build/
 out/
 target/
-
+classes
 
 # IntelliJ IDEA files
 .idea/
