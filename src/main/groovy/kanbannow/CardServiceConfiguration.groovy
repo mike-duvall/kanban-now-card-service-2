@@ -1,13 +1,8 @@
 package kanbannow;
 
-import com.example.helloworld.core.Template;
-import com.yammer.dropwizard.config.Configuration;
-import com.yammer.dropwizard.db.DatabaseConfiguration;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import org.hibernate.validator.constraints.NotEmpty;
-
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
+import kanbannow.core.Template;
+import com.yammer.dropwizard.config.Configuration
+import org.hibernate.validator.constraints.NotEmpty
 
 public class CardServiceConfiguration extends Configuration {
     @NotEmpty

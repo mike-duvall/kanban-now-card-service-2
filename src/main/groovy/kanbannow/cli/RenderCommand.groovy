@@ -1,7 +1,7 @@
-package com.example.helloworld.cli
+package kanbannow.cli
 
 import kanbannow.CardServiceConfiguration
-import com.example.helloworld.core.Template
+import kanbannow.core.Template
 import com.google.common.base.Optional
 import com.yammer.dropwizard.cli.ConfiguredCommand
 import com.yammer.dropwizard.config.Bootstrap

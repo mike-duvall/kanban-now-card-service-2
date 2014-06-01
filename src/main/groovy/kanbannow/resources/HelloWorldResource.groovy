@@ -1,7 +1,7 @@
-package com.example.helloworld.resources;
+package kanbannow.resources;
 
-import com.example.helloworld.core.Saying;
-import com.example.helloworld.core.Template;
+import kanbannow.core.Saying;
+import kanbannow.core.Template;
 import com.google.common.base.Optional;
 import com.yammer.dropwizard.jersey.caching.CacheControl;
 import com.yammer.metrics.annotation.Timed;

@@ -1,4 +1,4 @@
-package com.example.helloworld.core
+package kanbannow.core
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import org.hibernate.validator.constraints.Length

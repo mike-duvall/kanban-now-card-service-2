@@ -1,4 +1,4 @@
-package com.example.helloworld.health
+package kanbannow.health
 
 import kanbannow.CardServiceConfiguration
 import com.yammer.metrics.core.HealthCheck

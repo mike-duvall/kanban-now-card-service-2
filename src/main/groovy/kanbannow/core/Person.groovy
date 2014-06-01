@@ -1,4 +1,4 @@
-package com.example.helloworld.core
+package kanbannow.core
 
 import javax.persistence.*
 
@@ -6,11 +6,11 @@ import javax.persistence.*
 @Table(name = "people")
 @NamedQueries([
         @NamedQuery(
-                name = "com.example.helloworld.core.Person.findAll",
+                name = "kanbannow.core.Person.findAll",
                 query = "SELECT p FROM Person p"
         ),
         @NamedQuery(
-                name = "com.example.helloworld.core.Person.findById",
+                name = "kanbannow.core.Person.findById",
                 query = "SELECT p FROM Person p WHERE p.id = :id"
         )
 ])

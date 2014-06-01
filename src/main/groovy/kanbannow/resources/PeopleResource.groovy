@@ -1,7 +1,7 @@
-package com.example.helloworld.resources
+package kanbannow.resources
 
-import com.example.helloworld.core.Person
-import com.example.helloworld.db.PersonDAO
+import kanbannow.core.Person
+import kanbannow.db.PersonDAO
 import com.yammer.dropwizard.hibernate.UnitOfWork
 
 import javax.ws.rs.GET
@@ -9,7 +9,6 @@ import javax.ws.rs.POST
 import javax.ws.rs.Path
 import javax.ws.rs.Produces
 import javax.ws.rs.core.MediaType
-import java.util.List
 
 @Path("/people")
 @Produces(MediaType.APPLICATION_JSON)

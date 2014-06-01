@@ -1,4 +1,4 @@
-package com.example.helloworld.core;
+package kanbannow.core;
 
 public class User {
     final String name;

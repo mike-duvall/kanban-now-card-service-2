@@ -1,4 +1,4 @@
-package com.example.helloworld.core
+package kanbannow.core
 
 /**
  * Created by mduvall on 5/28/14.

@@ -1,14 +1,14 @@
 package kanbannow
 
-import com.example.helloworld.auth.ExampleAuthenticator
-import com.example.helloworld.cli.RenderCommand
-import com.example.helloworld.core.Template
-import com.example.helloworld.core.User
-import com.example.helloworld.health.GetCardsForBoardHealthCheck
-import com.example.helloworld.health.TemplateHealthCheck
-import com.example.helloworld.resources.CardResource
-import com.example.helloworld.resources.HelloWorldResource
-import com.example.helloworld.resources.ProtectedResource
+import kanbannow.auth.ExampleAuthenticator
+import kanbannow.cli.RenderCommand
+import kanbannow.core.Template
+import kanbannow.core.User
+import kanbannow.health.GetCardsForBoardHealthCheck
+import kanbannow.health.TemplateHealthCheck
+import kanbannow.resources.CardResource
+import kanbannow.resources.HelloWorldResource
+import kanbannow.resources.ProtectedResource
 import com.yammer.dropwizard.Service
 import com.yammer.dropwizard.assets.AssetsBundle
 import com.yammer.dropwizard.auth.basic.BasicAuthProvider

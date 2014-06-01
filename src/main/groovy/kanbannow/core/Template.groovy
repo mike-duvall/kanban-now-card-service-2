@@ -1,4 +1,4 @@
-package com.example.helloworld.core
+package kanbannow.core
 
 import com.google.common.base.Optional
 

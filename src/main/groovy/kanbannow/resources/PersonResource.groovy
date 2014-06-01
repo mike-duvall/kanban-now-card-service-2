@@ -1,7 +1,7 @@
-package com.example.helloworld.resources
+package kanbannow.resources
 
-import com.example.helloworld.core.Person
-import com.example.helloworld.db.PersonDAO
+import kanbannow.core.Person
+import kanbannow.db.PersonDAO
 import com.google.common.base.Optional
 import com.sun.jersey.api.NotFoundException
 import com.yammer.dropwizard.hibernate.UnitOfWork

@@ -1,11 +1,9 @@
-package com.example.helloworld.db
+package kanbannow.db
 
-import com.example.helloworld.core.Person
+import kanbannow.core.Person
 import com.google.common.base.Optional
 import com.yammer.dropwizard.hibernate.AbstractDAO
 import org.hibernate.SessionFactory
-
-import java.util.List
 
 public class PersonDAO extends AbstractDAO<Person> {
     public PersonDAO(SessionFactory factory) {
@@ -21,6 +19,6 @@ public class PersonDAO extends AbstractDAO<Person> {
     }
 
     public List<Person> findAll() {
-        return list(namedQuery("com.example.helloworld.core.Person.findAll"))
+        return list(namedQuery("kanbannow.core.Person.findAll"))
     }
 }

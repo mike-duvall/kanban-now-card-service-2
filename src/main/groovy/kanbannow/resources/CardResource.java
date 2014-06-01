@@ -1,6 +1,6 @@
-package com.example.helloworld.resources;
+package kanbannow.resources;
 
-import com.example.helloworld.core.Card;
+import kanbannow.core.Card;
 
 import javax.ws.rs.GET;
 

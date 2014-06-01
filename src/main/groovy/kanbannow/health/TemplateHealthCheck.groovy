@@ -1,8 +1,9 @@
-package com.example.helloworld.health
+package kanbannow.health
 
-import com.example.helloworld.core.Template
+import kanbannow.core.Template
 import com.google.common.base.Optional
 import com.yammer.metrics.core.HealthCheck
+
 import com.yammer.metrics.core.HealthCheck.Result
 
 public class TemplateHealthCheck extends HealthCheck {

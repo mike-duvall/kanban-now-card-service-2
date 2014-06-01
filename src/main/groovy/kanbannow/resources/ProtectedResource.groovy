@@ -1,6 +1,6 @@
-package com.example.helloworld.resources;
+package kanbannow.resources;
 
-import com.example.helloworld.core.User;
+import kanbannow.core.User;
 import com.yammer.dropwizard.auth.Auth;
 
 import javax.ws.rs.GET;
