@@ -1,9 +1,8 @@
 package com.example.helloworld.health
 
-import com.example.helloworld.HelloWorldConfiguration
+import com.example.helloworld.CardServiceConfiguration
 import com.yammer.metrics.core.HealthCheck
 import groovyx.net.http.HttpResponseException
-import junit.framework.AssertionFailedError
 
 import static org.hamcrest.CoreMatchers.equalTo
 import static org.unitils.reflectionassert.ReflectionAssert.assertReflectionEquals
@@ -14,12 +13,11 @@ import static org.junit.Assert.assertThat
 
 import com.yammer.metrics.core.HealthCheck.Result
 
-
 public class GetCardsForBoardHealthCheck extends HealthCheck {
 
-    private HelloWorldConfiguration configuration;
+    private CardServiceConfiguration configuration;
 
-    protected GetCardsForBoardHealthCheck(HelloWorldConfiguration configuration) {
+    protected GetCardsForBoardHealthCheck(CardServiceConfiguration configuration) {
         super("GetCardsForBoardHealthCheck")
         this.configuration = configuration
     }

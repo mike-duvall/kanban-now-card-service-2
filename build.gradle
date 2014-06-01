@@ -5,7 +5,7 @@ apply plugin: 'project-report'
 apply plugin: 'idea'
 
 // The main class of the application
-mainClassName = 'com.example.helloworld.HelloWorldService'
+mainClassName = 'com.example.helloworld.CardService'
 
 // Use Java 7 by default
 sourceCompatibility = 1.6

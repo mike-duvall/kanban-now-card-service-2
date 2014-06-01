@@ -1,6 +1,6 @@
 package com.example.helloworld.cli
 
-import com.example.helloworld.HelloWorldConfiguration
+import com.example.helloworld.CardServiceConfiguration
 import com.example.helloworld.core.Template
 import com.google.common.base.Optional
 import com.yammer.dropwizard.cli.ConfiguredCommand
@@ -11,7 +11,7 @@ import net.sourceforge.argparse4j.inf.Subparser
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
-public class RenderCommand extends ConfiguredCommand<HelloWorldConfiguration> {
+public class RenderCommand extends ConfiguredCommand<CardServiceConfiguration> {
     static final Logger LOGGER = LoggerFactory.getLogger(RenderCommand.class)
 
     public RenderCommand() {
@@ -29,9 +29,9 @@ public class RenderCommand extends ConfiguredCommand<HelloWorldConfiguration> {
     }
 
     @Override
-    protected void run(Bootstrap<HelloWorldConfiguration> bootstrap,
+    protected void run(Bootstrap<CardServiceConfiguration> bootstrap,
                        Namespace namespace,
-                       HelloWorldConfiguration configuration) throws Exception {
+                       CardServiceConfiguration configuration) throws Exception {
         final Template template = configuration.buildTemplate()
 
         if (namespace.getBoolean("include-default")) {

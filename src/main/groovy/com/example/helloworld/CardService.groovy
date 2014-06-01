@@ -2,31 +2,22 @@ package com.example.helloworld
 
 import com.example.helloworld.auth.ExampleAuthenticator
 import com.example.helloworld.cli.RenderCommand
-import com.example.helloworld.core.Person
 import com.example.helloworld.core.Template
 import com.example.helloworld.core.User
-import com.example.helloworld.db.PersonDAO
 import com.example.helloworld.health.GetCardsForBoardHealthCheck
 import com.example.helloworld.health.TemplateHealthCheck
 import com.example.helloworld.resources.CardResource
 import com.example.helloworld.resources.HelloWorldResource
-import com.example.helloworld.resources.PeopleResource
-import com.example.helloworld.resources.PersonResource
 import com.example.helloworld.resources.ProtectedResource
-import com.google.common.collect.ImmutableList
 import com.yammer.dropwizard.Service
 import com.yammer.dropwizard.assets.AssetsBundle
 import com.yammer.dropwizard.auth.basic.BasicAuthProvider
 import com.yammer.dropwizard.config.Bootstrap
 import com.yammer.dropwizard.config.Environment
-import com.yammer.dropwizard.db.DatabaseConfiguration
-import com.yammer.dropwizard.hibernate.HibernateBundle
-import com.yammer.dropwizard.hibernate.SessionFactoryFactory
-import com.yammer.dropwizard.migrations.MigrationsBundle
 
-public class HelloWorldService extends Service<HelloWorldConfiguration> {
+public class CardService extends Service<CardServiceConfiguration> {
     public static void main(String[] args) throws Exception {
-        new HelloWorldService().run(args)
+        new CardService().run(args)
     }
 
 //    final HibernateBundle<HelloWorldConfiguration> hibernateBundle =
@@ -38,7 +29,7 @@ public class HelloWorldService extends Service<HelloWorldConfiguration> {
 //        }
 
     @Override
-    public void initialize(Bootstrap<HelloWorldConfiguration> bootstrap) {
+    public void initialize(Bootstrap<CardServiceConfiguration> bootstrap) {
         bootstrap.setName("hello-world")
         bootstrap.addCommand(new RenderCommand())
         bootstrap.addBundle(new AssetsBundle())
@@ -52,7 +43,7 @@ public class HelloWorldService extends Service<HelloWorldConfiguration> {
     }
 
     @Override
-    public void run(HelloWorldConfiguration configuration,
+    public void run(CardServiceConfiguration configuration,
                     Environment environment) throws ClassNotFoundException {
 //        final PersonDAO dao = new PersonDAO(hibernateBundle.getSessionFactory())
 
