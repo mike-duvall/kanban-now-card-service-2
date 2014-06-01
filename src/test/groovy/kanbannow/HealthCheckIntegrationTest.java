@@ -1,7 +1,7 @@
 package kanbannow;
 
-import com.example.helloworld.CardService;
-import com.example.helloworld.CardServiceConfiguration;
+import kanbannow.CardService;
+import kanbannow.CardServiceConfiguration;
 import com.yammer.dropwizard.config.ConfigurationException;
 import com.yammer.dropwizard.testing.junit.DropwizardServiceRule;
 import org.apache.http.HttpResponse;

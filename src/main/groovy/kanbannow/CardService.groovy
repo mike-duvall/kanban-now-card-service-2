@@ -1,4 +1,4 @@
-package com.example.helloworld
+package kanbannow
 
 import com.example.helloworld.auth.ExampleAuthenticator
 import com.example.helloworld.cli.RenderCommand

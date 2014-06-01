@@ -1,6 +1,6 @@
 package com.example.helloworld.health
 
-import com.example.helloworld.CardServiceConfiguration
+import kanbannow.CardServiceConfiguration
 import com.yammer.metrics.core.HealthCheck
 import groovyx.net.http.HttpResponseException
 

@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package kanbannow;
 
 import com.example.helloworld.core.Template;
 import com.yammer.dropwizard.config.Configuration;

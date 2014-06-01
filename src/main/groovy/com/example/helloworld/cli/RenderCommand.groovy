@@ -1,6 +1,6 @@
 package com.example.helloworld.cli
 
-import com.example.helloworld.CardServiceConfiguration
+import kanbannow.CardServiceConfiguration
 import com.example.helloworld.core.Template
 import com.google.common.base.Optional
 import com.yammer.dropwizard.cli.ConfiguredCommand
