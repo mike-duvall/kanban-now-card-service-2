@@ -29,32 +29,32 @@ public class HelloWorldService extends Service<HelloWorldConfiguration> {
         new HelloWorldService().run(args)
     }
 
-    final HibernateBundle<HelloWorldConfiguration> hibernateBundle =
-        new HibernateBundle<HelloWorldConfiguration>(ImmutableList.copyOf([Person]), new SessionFactoryFactory()) {
-            @Override
-            public DatabaseConfiguration getDatabaseConfiguration(HelloWorldConfiguration configuration) {
-                return configuration.getDatabaseConfiguration()
-            }
-        }
+//    final HibernateBundle<HelloWorldConfiguration> hibernateBundle =
+//        new HibernateBundle<HelloWorldConfiguration>(ImmutableList.copyOf([Person]), new SessionFactoryFactory()) {
+//            @Override
+//            public DatabaseConfiguration getDatabaseConfiguration(HelloWorldConfiguration configuration) {
+//                return configuration.getDatabaseConfiguration()
+//            }
+//        }
 
     @Override
     public void initialize(Bootstrap<HelloWorldConfiguration> bootstrap) {
         bootstrap.setName("hello-world")
         bootstrap.addCommand(new RenderCommand())
         bootstrap.addBundle(new AssetsBundle())
-        bootstrap.addBundle(new MigrationsBundle<HelloWorldConfiguration>() {
-            @Override
-            public DatabaseConfiguration getDatabaseConfiguration(HelloWorldConfiguration configuration) {
-                return configuration.getDatabaseConfiguration()
-            }
-        })
-        bootstrap.addBundle(hibernateBundle)
+//        bootstrap.addBundle(new MigrationsBundle<HelloWorldConfiguration>() {
+//            @Override
+//            public DatabaseConfiguration getDatabaseConfiguration(HelloWorldConfiguration configuration) {
+//                return configuration.getDatabaseConfiguration()
+//            }
+//        })
+//        bootstrap.addBundle(hibernateBundle)
     }
 
     @Override
     public void run(HelloWorldConfiguration configuration,
                     Environment environment) throws ClassNotFoundException {
-        final PersonDAO dao = new PersonDAO(hibernateBundle.getSessionFactory())
+//        final PersonDAO dao = new PersonDAO(hibernateBundle.getSessionFactory())
 
         environment.addProvider(new BasicAuthProvider<User>(new ExampleAuthenticator(), "SUPER SECRET STUFF"))
 
@@ -64,8 +64,8 @@ public class HelloWorldService extends Service<HelloWorldConfiguration> {
         environment.addHealthCheck(new GetCardsForBoardHealthCheck(configuration))
         environment.addResource(new HelloWorldResource(template))
         environment.addResource(new ProtectedResource())
-        environment.addResource(new PeopleResource(dao))
-        environment.addResource(new PersonResource(dao))
+//        environment.addResource(new PeopleResource(dao))
+//        environment.addResource(new PersonResource(dao))
         environment.addResource(new CardResource())
 
     }

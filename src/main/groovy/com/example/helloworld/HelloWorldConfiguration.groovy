@@ -16,17 +16,17 @@ public class HelloWorldConfiguration extends Configuration {
     @NotEmpty
     String defaultName = "Stranger";
 
-    @Valid
-    @NotNull
-    @JsonProperty("database")
-    DatabaseConfiguration databaseConfiguration = new DatabaseConfiguration();
-
+//    @Valid
+//    @NotNull
+//    @JsonProperty("database")
+//    DatabaseConfiguration databaseConfiguration = new DatabaseConfiguration();
+//
     public Template buildTemplate() {
         return new Template(template, defaultName);
     }
-
-    public DatabaseConfiguration getDatabaseConfiguration() {
-        return databaseConfiguration;
-    }
+//
+//    public DatabaseConfiguration getDatabaseConfiguration() {
+//        return databaseConfiguration;
+//    }
 
 }
