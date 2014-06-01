@@ -51,7 +51,7 @@ public class GetCardsForBoardHealthCheck extends HealthCheck {
 
         def expectedResponse = [
             [
-                    id: 5939,
+                    id: 59391,
                     text: 'order vitamins'
             ]
         ]
