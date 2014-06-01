@@ -22,8 +22,8 @@ public class HealthCheckIntegrationTest {
 
 
     // This test requires the existence of a property file at: ../properties/card-service.yml
-    public static final String CARD_SERVICE_YML = "example.yml";
-    public static final String PROPERTIES_PATH = "src/dist/config/";
+    public static final String CARD_SERVICE_YML = "card-service-2.yml";
+    public static final String PROPERTIES_PATH = "../kanban-now-card-service-2-config/dev/";
 
     private DropwizardServiceRule<CardServiceConfiguration> serviceRule = new DropwizardServiceRule<CardServiceConfiguration>(CardService.class, PROPERTIES_PATH + CARD_SERVICE_YML);
 
