@@ -41,14 +41,14 @@ public class GetCardsForBoardHealthCheck extends HealthCheck {
             String url = "http://localhost:${port}/"
             def restClient = new RESTClient(url)
 
-//        String path = 'card/?boardId=61&location=1'
+//            String path = 'card?boardId=61&location=1'
             String path = 'card'
 
             restClient.headers = [Accept: 'application/json']
 
 
             def response = makeRESTCall {
-                restClient.get(path: path, requestContentType: 'application/json')
+                restClient.get(path: path, query: [boardId: 66, locationId: 1], requestContentType: 'application/json')
             }
 
 

@@ -7,8 +7,8 @@ import javax.ws.rs.GET;
 
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
-import java.util.ArrayList;
 import java.util.List;
 
 @Path("/card")
@@ -22,18 +22,11 @@ public class CardResource {
     }
 
     @GET
-    public List<Card> getCardsForBoardAndLocation() {
-//        Card newCard = new Card();
-//        newCard.setId(5939);
-//        newCard.setText("order vitamins");
-//
-//        List<Card> cardList = new ArrayList<Card>();
-//        cardList.add(newCard);
-//        return cardList;
-        int boardId = 66;
-        int locationId = 1;
-        List<Card> cardList = cardDAO.getCardsForBoardAndLocation(boardId, locationId);
+    public List<Card> getCardsForBoardAndLocation(
+            @QueryParam("boardId") int boardId,
+            @QueryParam("locationId") int locationId ) {
 
+        List<Card> cardList = cardDAO.getCardsForBoardAndLocation(boardId, locationId);
         return cardList;
     }
 
