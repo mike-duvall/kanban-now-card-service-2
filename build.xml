@@ -17,7 +17,7 @@
             <arg value="-jar"/>
             <arg value="${jar.name}"/>
             <arg value="server"/>
-            <arg value="card-service2.yml"/>
+            <arg value="card-service-2.yml"/>
 
         </exec>
 	</target>
